@@ -7,7 +7,7 @@ const  Recipe = new Schema(
         prepTime: {type: Number, required: true},
         cookTime: {type: Number, required: true},
         difficulty: {type: Number, required: true},
-        recipeFor: {type: Schema.Types.ObjectId, ref: "Cuisine_name"}
+        recipeFor: {type: Schema.Types.ObjectId, ref: "cuisines"}
     },
     { timestamps: true },
 )

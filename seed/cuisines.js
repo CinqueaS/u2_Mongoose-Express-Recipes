@@ -62,9 +62,10 @@ const main = async () => {
             recipeFor: barbecueRibs[0]._id
         }
     ]
-    const Recipe1 = await Recipe.find({recipeFor: butterChicken[0]._id})
+    const Recipe1 = await Recipe.find({recipeFor: butterChicken[0]._id}).populate('recipeFor')
     const Recipe2 = await Recipe.find({recipeFor: frenchToast[0]._id})
     const Recipe3 = await Recipe.find({recipeFor: barbecueRibs[0]._id})
+    console.log(Recipe1, Recipe2, Recipe3)
     const directions = [
         {
             preparation: 'Marinade: Combine the Marinade ingredients with the chicken in a bowl. Cover and refrigerate overnight, or up to 24 hours (minimum 3 hrs).',
@@ -102,9 +103,9 @@ Cut ribs into individual or multiple rib portions and serve with remaining Barbc
    
    
    
-    await Cuisine.insertMany(Cuisines)
-    await Recipe.insertMany(Recipes)
-    await Directions.insertMany(directions)
+  //  await Cuisine.insertMany(Cuisines)
+   // await Recipe.insertMany(Recipes)
+   // await Directions.insertMany(directions)
     console.log("Created meals")
 }
 const run = async () => {
